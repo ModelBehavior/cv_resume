@@ -1,0 +1,75 @@
+---
+name: Ra'Shawn
+surname: Howard
+position: "Data Scientist"
+address: "Tulsa, OK 74136"
+phone: +1 539 444 6016
+email: "shawn715814@gmail.com"
+github: ModelBehavior
+linkedin: RaShawn Howard
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Statistics and numbers are no good unless you have good people to analyse and interpret their meaning and importance"
+output: 
+  vitae::awesomecv:
+    page_total: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# General Skills
+
+ * Data Visualization \hspace{42pt} * Machine Learning \hspace{68pt} * Statistical Analysis
+ * R, SAS, Python, SQL  \hspace{34pt} * Data Wrangling \hspace{79pt} * Tidyverse for Data Wrangling
+ * Tidymodels for Modeling \hspace{11pt} * Linear and Non-linear Models \hspace{14pt} * PCA/PLS
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "Master of Applied Statistics", "2021", "Oklahoma State University", "Stillwater, Oklahoma",
+  "Bachelor of Computer Science", "2019", "Northeastern State University", "Tahlequah, Oklahoma",
+) %>% 
+  detailed_entries(Degree, Year, Institution, Where)
+```
+
+# Work History
+
+```{r}
+tribble(
+  ~description,~Year, ~Type, ~Desc,
+  "Tutored approximately twelve students per week in private sessions using detailed lesson plans. Created study guides and plans for student exam preparation based on self-designed practice tests and school curricula.
+Initiated communication with students to address learning concerns and offer additional guidance for independent study.
+Collaborated with teachers about specific student math needs.",
+  2019, "Mathematics Tutor", "John Vaughan Library – Tahlequah, OK",
+
+"Collaborated with students to complete homework assignments, identify lagging skills and correct weaknesses.
+Identified learning needs and implemented fun and engaging learning activities to help students advance.
+Maintained detailed files and created charts tracking students learning progress. Supported students with helpful study habits and exam strategies.",
+
+  2019, "Mathematics Tutor", "Northeastern State University – Tahlequah, OK"
+) %>% 
+  detailed_entries(description, Year, Type, Desc)
+```
+
+# Projects
+
+```{r}
+library(dplyr)
+tribble(
+  ~description, ~number,~num, ~project, 
+  "Fakes and spammers are a major problem on all social media platforms, including Instagram.
+Being able to identify these accounts can help members of the platform not be solicited by said account.
+After EDA and preprocessing of the data, several models were built to predict if an account is a spam account. Some models included in the model building process were KNN, boosted trees, SVM, and logistic regression. The metrics investigated to see which yielded the best results are sensitivity, specificity, accuracy, and area under the ROC curve.","Project", 1, 
+"Spam Account Detection Modeling", 
+"These days when the world is suffering from a pandemic situation, it becomes really hard to maintain mental fitness. Keeping in mind that happy and healthy employees are indisputably more productive at work, and in turn, help the business flourish profoundly.
+After EDA and preprocessing of the data, several models were built to predict employee burn rate. Models included linear regression (Ridge, LASSO, Elastic Net), KNN, MARS, random forest, cubist, and boosted trees. RMSE and R-squared were used to evaluate model performance.",
+"Project",2,
+"Mental Health Analysis" 
+) %>% 
+  detailed_entries(description, number, num, project)
+```
